@@ -2,7 +2,7 @@
 set -e
 
 echo "Activating feature 'helix-editor'"
-echo "Installing version ${HELIX_VERSION}"
+echo "Installing version ${HELIXVERSION}"
 
 install_debian_packages() {
 	apt-get -y update
@@ -54,13 +54,13 @@ case "${ADJUSTED_ID}" in
 esac
 
 cd /tmp
-curl -fsSLO https://github.com/helix-editor/helix/releases/download/${HELIX_VERSION}/helix-${HELIX_VERSION}-x86_64-linux.tar.xz
-tar xJf helix-${HELIX_VERSION}-x86_64-linux.tar.xz
-rm -f helix-${HELIX_VERSION}-x86_64-linux.tar.xz
+curl -fsSLO https://github.com/helix-editor/helix/releases/download/${HELIXVERSION}/helix-${HELIXVERSION}-x86_64-linux.tar.xz
+tar xJf helix-${HELIXVERSION}-x86_64-linux.tar.xz
+rm -f helix-${HELIXVERSION}-x86_64-linux.tar.xz
 mkdir -p  ${_CONTAINER_USER_HOME}/.local/bin
-mv helix-${HELIX_VERSION}-x86_64-linux/hx ${_CONTAINER_USER_HOME}/.local/bin
+mv helix-${HELIXVERSION}-x86_64-linux/hx ${_CONTAINER_USER_HOME}/.local/bin
 mkdir -p  ${_CONTAINER_USER_HOME}/.config/helix
-mv helix-${HELIX_VERSION}-x86_64-linux/runtime ${_CONTAINER_USER_HOME}/.config/helix
-rm -rf helix-${HELIX_VERSION}-x86_64-linux
+mv helix-${HELIXVERSION}-x86_64-linux/runtime ${_CONTAINER_USER_HOME}/.config/helix
+rm -rf helix-${HELIXVERSION}-x86_64-linux
 
-echo "Helix ${HELIX_VERSION} installed as ${_CONTAINER_USER_HOME}/.local/bin/hx"
+echo "Helix ${HELIXVERSION} installed as ${_CONTAINER_USER_HOME}/.local/bin/hx"
