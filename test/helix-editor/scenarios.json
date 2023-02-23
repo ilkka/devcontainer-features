@@ -1,5 +1,5 @@
 {
-    "install_helix": {
+    "install_specific_version": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "ghcr.io/devcontainers/features/common-utils:1": {
