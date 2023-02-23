@@ -57,10 +57,9 @@ cd /tmp
 curl -fLO https://github.com/helix-editor/helix/releases/download/${HELIXVERSION}/helix-${HELIXVERSION}-x86_64-linux.tar.xz
 tar xJf helix-${HELIXVERSION}-x86_64-linux.tar.xz
 rm -f helix-${HELIXVERSION}-x86_64-linux.tar.xz
-mkdir -p  ${_CONTAINER_USER_HOME}/.local/bin
-mv helix-${HELIXVERSION}-x86_64-linux/hx ${_CONTAINER_USER_HOME}/.local/bin
+install -D helix-${HELIXVERSION}-x86_64-linux/hx /usr/local/bin/hx
 mkdir -p  ${_CONTAINER_USER_HOME}/.config/helix
 mv helix-${HELIXVERSION}-x86_64-linux/runtime ${_CONTAINER_USER_HOME}/.config/helix
 rm -rf helix-${HELIXVERSION}-x86_64-linux
 
-echo "Helix ${HELIXVERSION} installed as ${_CONTAINER_USER_HOME}/.local/bin/hx"
+echo "Helix ${HELIXVERSION} installed as /usr/local/bin/hx"
