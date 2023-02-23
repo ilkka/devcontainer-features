@@ -6,7 +6,7 @@ echo "Installing version ${HELIXVERSION}"
 
 install_debian_packages() {
 	apt-get -y update
-	DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends curl ca-certificates
+	DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends curl ca-certificates xz-utils
 	apt-get -y upgrade --no-install-recommends
 	apt-get -y autoremove
 	apt-get -y clean
@@ -18,12 +18,12 @@ install_redhat_packages() {
     if ! type dnf > /dev/null 2>&1; then
         install_cmd=yum
     fi
-    ${install_cmd} -y install curl ca-certificates
+    ${install_cmd} -y install curl ca-certificates xz
 	${install_cmd} upgrade -y
 }
 
 install_alpine_packages() {
-	apk update && apk add --no-cache curl ca-certificates
+	apk update && apk add --no-cache curl ca-certificates xz
 }
 
 # ADJUSTED_ID stuff copied from devcontainers/features/common-utils
