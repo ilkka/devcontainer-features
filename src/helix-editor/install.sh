@@ -2,7 +2,7 @@
 set -e
 
 echo "Activating feature 'helix-editor'"
-echo "Installing version ${VERSION}"
+echo "Installing version ${HELIX_VERSION}"
 
 install_debian_packages() {
 	apt-get -y update

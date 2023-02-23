@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "description": "Install Helix editor (https://helix-editor.com) from a GitHub release",
     "options": {
-        "version": {
+        "helixVersion": {
             "type": "string",
             "default": "22.12",
             "description": "Version to install"
