@@ -1,0 +1,16 @@
+{
+    "name": "Helix editor",
+    "id": "helix-editor",
+    "version": "1.0.0",
+    "description": "Install Helix editor (https://helix-editor.com) from a GitHub release",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "22.12",
+            "description": "Version to install"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
