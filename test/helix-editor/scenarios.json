@@ -1,0 +1,17 @@
+{
+    "install_helix": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "ghcr.io/devcontainers/features/common-utils:1": {
+                "installZsh": false,
+                "installOhMyZsh": false,
+                "upgradePackages": false,
+                "username": "octocat"
+            },
+            "helix-editor": {
+                "version": "22.08"
+            }
+        },
+        "remoteUser": "octocat"
+    }
+}
