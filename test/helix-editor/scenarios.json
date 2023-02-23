@@ -9,7 +9,7 @@
                 "username": "octocat"
             },
             "helix-editor": {
-                "version": "22.08"
+                "helixVersion": "22.08"
             }
         },
         "remoteUser": "octocat"
