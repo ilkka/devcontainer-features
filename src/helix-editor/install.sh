@@ -6,7 +6,7 @@ echo "Installing version ${HELIXVERSION}"
 
 install_debian_packages() {
 	apt-get -y update
-	DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends curl
+	DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends curl ca-certificates
 	apt-get -y upgrade --no-install-recommends
 	apt-get -y autoremove
 	apt-get -y clean
@@ -18,12 +18,12 @@ install_redhat_packages() {
     if ! type dnf > /dev/null 2>&1; then
         install_cmd=yum
     fi
-    ${install_cmd} -y install curl
+    ${install_cmd} -y install curl ca-certificates
 	${install_cmd} upgrade -y
 }
 
 install_alpine_packages() {
-	apk update && apk add --no-cache curl
+	apk update && apk add --no-cache curl ca-certificates
 }
 
 # ADJUSTED_ID stuff copied from devcontainers/features/common-utils
@@ -54,7 +54,7 @@ case "${ADJUSTED_ID}" in
 esac
 
 cd /tmp
-curl -fsSLO https://github.com/helix-editor/helix/releases/download/${HELIXVERSION}/helix-${HELIXVERSION}-x86_64-linux.tar.xz
+curl -fLO https://github.com/helix-editor/helix/releases/download/${HELIXVERSION}/helix-${HELIXVERSION}-x86_64-linux.tar.xz
 tar xJf helix-${HELIXVERSION}-x86_64-linux.tar.xz
 rm -f helix-${HELIXVERSION}-x86_64-linux.tar.xz
 mkdir -p  ${_CONTAINER_USER_HOME}/.local/bin
